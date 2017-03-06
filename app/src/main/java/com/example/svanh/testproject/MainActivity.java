@@ -12,4 +12,5 @@ public class MainActivity extends AppCompatActivity {
     }
     public int jemoeder = 1;
     public int david = 0;
+    public int david2 = 2;
 }
