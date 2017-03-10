@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public int jemoeder = 1;
     public int david = 0;
     public int david2 = 2;
-    public int sanderthegamer14 = 7711;
+    public int sanderthegamer14 = 771221;
 
     private EditText favcolor;
     private TextView textout;
