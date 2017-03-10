@@ -13,5 +13,5 @@ public class MainActivity extends AppCompatActivity {
     public int jemoeder = 1;
     public int david = 0;
     public int david2 = 2;
-    public int sanderthegamer = 771;
+    public int sanderthegamer14 = 771;
 }
