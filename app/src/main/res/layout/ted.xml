@@ -17,12 +17,12 @@
             android:id="@+id/textView2" />
 
         <EditText
+            android:id="@+id/User_Input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textPersonName"
-            android:text="UserName"
             android:ems="10"
-            android:id="@+id/editText" />
+            android:inputType="textPersonName"
+            android:text="UserName" />
     </LinearLayout>
 
     <LinearLayout
@@ -38,11 +38,11 @@
             android:id="@+id/textView3" />
 
         <EditText
+            android:id="@+id/Pass_Input"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
+            android:layout_height="63dp"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:inputType="textPassword"
             android:text="Wachtwoord" />
 
     </LinearLayout>
@@ -57,18 +57,18 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:text="Aanmelden"
+            android:id="@+id/Aanmelden"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button6"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Aanmelden" />
 
         <Button
-            android:text="Registreren"
+            android:id="@+id/Registreren"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button5"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Registreren" />
     </LinearLayout>
 
 </LinearLayout>
