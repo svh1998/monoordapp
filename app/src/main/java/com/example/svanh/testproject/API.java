@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 
 
-public class api {
-
+public class API {
+    public int test = 1;
 
 }
