@@ -1,4 +1,4 @@
-package com.example.svanh.testproject;
+package com.example.svanh.testproject.login;
 
 /**
  * Created by tedvanes on 10-03-17.
@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.svanh.testproject.R;
 
 
 public class Aanmelden extends AppCompatActivity{
