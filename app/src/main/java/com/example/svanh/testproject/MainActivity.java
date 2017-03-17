@@ -28,5 +28,6 @@ public class MainActivity extends AppCompatActivity {
     public int david = 0;
     public int david2 = 2;
     public int sanderthegamer14 = 771221;
+    public int sanderalleskwijt = 0;
 
 }
