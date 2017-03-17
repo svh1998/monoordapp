@@ -13,20 +13,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button b = (Button) findViewById(R.id.button2);
+        b.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                EditText favcolor = (EditText) findViewById(R.id.txtColor);
+                TextView textout = (TextView) findViewById(R.id.txtOutput);
+                textout.setText(favcolor.getText());
+            }
+        });
     }
-    public int jemoeder = 1;
+
     public int david = 0;
     public int david2 = 2;
     public int sanderthegamer14 = 771221;
 
-    private EditText favcolor;
-    private TextView textout;
-
-
-    public void buttonOnClick(View v){
-        Button button=(Button) v;
-        favcolor = (EditText) findViewById(R.id.txtColor);
-        textout = (TextView) findViewById(R.id.txtOutput);
-        textout.setText(favcolor.getText());
-    }
 }
