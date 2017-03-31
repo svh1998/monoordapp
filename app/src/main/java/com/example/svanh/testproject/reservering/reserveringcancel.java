@@ -12,7 +12,7 @@ import com.example.svanh.testproject.R;
 public class reserveringcancel extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.david);
+        setContentView(R.layout.activity_main);
 
     }
 }
