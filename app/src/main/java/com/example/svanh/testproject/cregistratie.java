@@ -12,5 +12,12 @@ public class cregistratie extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.david);
 
+        Button Ok= (Button)findViewById(R.id.buttonId);
+        Ok.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }
