@@ -13,13 +13,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="MONoord"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
         </activity>
         <activity
+
             android:name=".login.Aanmelden"
             android:label="@string/title_newactivity_login">
             <intent-filter>
@@ -28,7 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".api.apitest">
+        <activity android:name=".api.apitest"
+            android:label="JSON Decode/Parsing">
           <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

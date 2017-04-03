@@ -24,7 +24,7 @@ public class apitest extends AppCompatActivity {
 
         ProgressDialog progress;
         progress = new ProgressDialog(this);
-        progress.setTitle("JSon");
+        progress.setTitle("David hoeksema");
         progress.setMessage("Wait!!");
         progress.setCancelable(true);
         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
