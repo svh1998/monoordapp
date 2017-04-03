@@ -20,7 +20,7 @@ public class Aanmelden extends AppCompatActivity{
     public void onCreate(Bundle  savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ted);
-        int test = 1;
+        int test = 12;
 //        Button aanmelden1 = (Button)findViewById(R.id.Aanmelden);
 //        aanmelden1.setOnClickListener(new View.OnClickListener(){
 //            @Override
