@@ -2,24 +2,14 @@ package com.example.svanh.testproject.reservering;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.svanh.testproject.R;
 
-public class reserveringcancel extends AppCompatActivity{
-    public void onCreate(Bundle savedInstanceState) {
+public class reserveringcancel extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Button Ok= (Button)findViewById(R.id.buttonId);
-        Ok.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+        setContentView(R.layout.reserveringcancel);
     }
 }
