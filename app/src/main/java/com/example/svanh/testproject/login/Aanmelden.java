@@ -1,4 +1,4 @@
-package com.example.svanh.testproject;
+package com.example.svanh.testproject.login;
 
 /**
  * Created by tedvanes on 10-03-17.
@@ -13,24 +13,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.svanh.testproject.R;
 
 public class Aanmelden extends AppCompatActivity{
     @Override
     public void onCreate(Bundle  savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ted);
-
-        Button  Aanmelden = (Button)findViewById(R.id.Aanmelden);
-        Aanmelden.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Toast.makeText(getApplicationContext(), "Bezig met Aanmelden", Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), "Bezig met Aanmelden", Toast.LENGTH_SHORT).show();
-
-            }
-        });
+        int test = 12;
+//        Button aanmelden1 = (Button)findViewById(R.id.Aanmelden);
+//        aanmelden1.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Toast.makeText(getApplicationContext(), "Bezig met Aanmelden", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
-    public void Check(char User, char Pass) {
-
-    }
+//    public void Check(char User, char Pass) {
+//
+//    }
 }
