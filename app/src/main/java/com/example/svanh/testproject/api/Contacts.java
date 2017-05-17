@@ -5,14 +5,19 @@ package com.example.svanh.testproject.api;
  */
 
 public class Contacts {
-    private String naam,id;
+    private String name,id;
 
-    public String getNaam() {
-        return naam;
+    public Contacts(String name, String id){
+        this.setName(name);
+        this.setId(id);
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String naam) {
+        this.name = naam;
     }
 
     public String getId() {
