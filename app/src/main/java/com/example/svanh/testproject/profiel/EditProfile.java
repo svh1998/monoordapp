@@ -35,6 +35,7 @@ public class EditProfile extends AppCompatActivity {
             }*/
 
         Context context = getApplicationContext();
+        Context elsebericht = getApplicationContext();
         final EditText input = (EditText)findViewById(R.id.editText6);
         final EditText input2 = (EditText)findViewById(R.id.editText3);
         final EditText input3 = (EditText)findViewById(R.id.editText8);
@@ -48,8 +49,17 @@ public class EditProfile extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+          if(isEmail = 1, isTelefoon = 1){
+                    toast.show();
+                }
+                else{
+                    String tekst = "niet alle velden zijn correct ingevuld";
+                    int bericht = Toast.LENGTH_SHORT;
 
-                 toast.show();
+                    final Toast message = Toast.makeText(elsebericht,tekst,bericht);
+                    message.show();
+                }
+
 
             }
         });
