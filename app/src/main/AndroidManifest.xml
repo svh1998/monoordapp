@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".api.apitest"
+            android:name=".api.ApiTest"
             android:label="JSON Decode/Parsing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
