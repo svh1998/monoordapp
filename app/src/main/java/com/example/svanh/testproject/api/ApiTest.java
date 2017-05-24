@@ -3,6 +3,7 @@ package com.example.svanh.testproject.api;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -16,10 +17,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.Executor;
 
-public class ApiTest extends AppCompatActivity {
+public class ApiTest extends AppCompatActivity implements BackgroundTaskListener{
     private String json_result;
-
+    private BackgroundTask backgroundtask;
     public String getJson_Result(){
         return json_result;
     }
@@ -29,8 +31,14 @@ public class ApiTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apitest);
     }
-    public void getJSON (View view){
-            new BackgroundTask(this).execute();
+    public void getJSON (View view) {
+        backgroundtask = (BackgroundTask) new BackgroundTask(this, "http://api.hostdalem.nl/json_get_data.php").execute();
+    }
+
+    @Override
+    public void onTaskComplete(){
+        TextView textView = (TextView) findViewById(R.id.textView);
+        textView.setText(backgroundtask.getJson_result());
     }
 
     public void parseJSON(View view){
@@ -45,63 +53,10 @@ public class ApiTest extends AppCompatActivity {
         }
     }
 
-    private void setJsonString(String result) {
+    public void setJsonString(String result) {
         json_result = result;
     }
 
-
-    class BackgroundTask extends AsyncTask<Void, Void, String> {
-        String json_url;
-        String json_result = "";
-        ApiTest owner;
-
-        public BackgroundTask(ApiTest owner){
-            this.owner = owner;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            json_url = "http://api.hostdalem.nl/json_get_data.php";
-        }
-
-        @Override
-        protected String doInBackground(Void... params) {
-
-            try {
-                URL url = new URL(json_url);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = httpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                StringBuilder stringBuilder = new StringBuilder();
-                String line;
-                while ((line = bufferedReader.readLine())!= null)
-                {
-                    stringBuilder.append(line+"\n");
-                }
-                bufferedReader.close();
-                inputStream.close();
-                httpURLConnection.disconnect();
-                this.json_result = stringBuilder.toString().trim();
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-                this.json_result = "Foute url";
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return this.json_result;
-        }
-        @Override
-        protected void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-        }
-        @Override
-        protected void onPostExecute(String result) {
-            TextView textView = (TextView) findViewById(R.id.textView);
-            textView.setText(result);
-            owner.setJsonString(result);
-        }
-    }
 
 }
 

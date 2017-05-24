@@ -49,16 +49,16 @@ public class EditProfile extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-          if(isEmail = 1, isTelefoon = 1){
-                    toast.show();
-                }
-                else{
-                    String tekst = "niet alle velden zijn correct ingevuld";
-                    int bericht = Toast.LENGTH_SHORT;
-
-                    final Toast message = Toast.makeText(elsebericht,tekst,bericht);
-                    message.show();
-                }
+//          if(isEmail = 1, isTelefoon = 1){
+//                    toast.show();
+//                }
+//                else{
+//                    String tekst = "niet alle velden zijn correct ingevuld";
+//                    int bericht = Toast.LENGTH_SHORT;
+//
+//                    final Toast message = Toast.makeText(elsebericht,tekst,bericht);
+//                    message.show();
+//                }
 
 
             }
