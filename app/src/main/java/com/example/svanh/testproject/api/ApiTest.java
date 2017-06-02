@@ -32,7 +32,7 @@ public class ApiTest extends AppCompatActivity implements BackgroundTaskListener
         setContentView(R.layout.activity_apitest);
     }
     public void getJSON (View view) {
-        backgroundtask = (BackgroundTask) new BackgroundTask(this, "http://api.hostdalem.nl/json_get_data.php").execute();
+        backgroundtask = (BackgroundTask) new BackgroundTask(this, "http://api.hostdalem.nl/json_get_data.php?table=migrations").execute();
     }
 
     @Override

@@ -37,10 +37,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".api.DisplayListView" />
-        <activity android:name=".profiel.editprofile"></activity>
+        <activity android:name=".profiel.editprofile" />
 
         <service
             android:name=".api.ServiceGetData"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".webapi.ApiDriver"
             android:enabled="true"
             android:exported="true"></service>
     </application>
