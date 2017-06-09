@@ -46,7 +46,22 @@
         <service
             android:name=".webapi.ApiDriver"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+        <service
+            android:name=".webapi.Driver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".testclasses.TestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".testclasses.Activity2"></activity>
     </application>
 
 </manifest>

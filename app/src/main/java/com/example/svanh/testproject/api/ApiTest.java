@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.svanh.testproject.R;
+import com.example.svanh.testproject.webapi.Driver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class ApiTest extends AppCompatActivity implements BackgroundTaskListener
     public void onTaskComplete(){
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(backgroundtask.getJson_result());
-    }
+}
 
     public void parseJSON(View view){
 
@@ -56,8 +57,6 @@ public class ApiTest extends AppCompatActivity implements BackgroundTaskListener
     public void setJsonString(String result) {
         json_result = result;
     }
-
-
 }
 
 
