@@ -59,9 +59,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".testclasses.Activity2"></activity>
+        <activity android:name=".testclasses.Activity2" />
+        <activity android:name=".Login_Logout.Login" />
+        <activity android:name=".Login_Logout.Logout" />
+        <activity android:name=".Home" />
+        <activity android:name=".Reserveringen.Mijn_Reserveringen" />
+        <activity android:name=".Reserveringen.Nieuwe_Reserveringen" />
+        <activity android:name=".Eventpagina.View_Eventen"></activity>
     </application>
 
 </manifest>
