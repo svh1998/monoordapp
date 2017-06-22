@@ -6,4 +6,22 @@
     android:layout_height="match_parent"
     tools:context="com.example.svanh.testproject.Login_Logout.Logout">
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="365dp"
+        android:layout_height="119dp"
+        android:text="Bevestig dat u wilt uitloggen"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JA ik wil uitloggen"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="231dp" />
 </android.support.constraint.ConstraintLayout>
