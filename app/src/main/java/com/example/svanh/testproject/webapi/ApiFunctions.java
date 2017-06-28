@@ -22,5 +22,11 @@ public class ApiFunctions {
         return "hello";
     }
 
+    public void ChangePassword(Context context) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", "http://api.hostdalem.nl/validate.php?email=admin@admin.nl&password=admin1243");
+        context.startService(intent);
+    }
+
 }
 
