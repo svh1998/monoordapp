@@ -34,6 +34,8 @@ public class MyAppCompatActivity extends AppCompatActivity implements ServiceCon
         Toast.makeText(this, "SERVICE CONNECTED", Toast.LENGTH_SHORT).show();
     }
 
+
+
     @Override
     public void onServiceDisconnected(ComponentName name) {
         st = null;

@@ -60,7 +60,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".testclasses.Activity2" />
-        <activity android:name=".Login_Logout.Login" />
         <activity android:name=".Login_Logout.Logout" />
         <activity android:name=".Home" />
         <activity android:name=".Reserveringen.Mijn_Reserveringen" />

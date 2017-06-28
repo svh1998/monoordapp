@@ -1,8 +1,13 @@
 package com.example.svanh.testproject.webapi;
 
-import android.app.ActivityManager;
-import android.content.Context;
-import android.content.Intent;
+        import android.app.ActivityManager;
+        import android.content.BroadcastReceiver;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.IntentFilter;
+        import android.os.SystemClock;
+        import android.support.v4.content.LocalBroadcastManager;
+        import android.util.Log;
 
 /**
  * Created by svanh on 6/8/2017.
@@ -10,18 +15,12 @@ import android.content.Intent;
 
 public class ApiFunctions {
 
-    public ApiFunctions() {
+    public static String testdata(Context context){
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", "http://api.hostdalem.nl/validate.php?email=admin@admin.nl&password=admin1243");
+        context.startService(intent);
+        return "hello";
     }
-
-    public boolean checklogin(String email, String wachtwoord){
-        Driver driver = new Driver();
-        driver.setJson_url("http://api.hostdalem.nl/validate.php?email="+email+ "&password="+wachtwoord);
-        driver.getdata();
-        driver.getJson_result();
-
-        return true;
-    }
-
-
 
 }
+
