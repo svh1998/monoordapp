@@ -30,10 +30,14 @@ public class Validator {
     }
 
     public int isEmail(String arg1) {
-        // if email valid is dan dit:
-        //this.setValid(1);
-        // else
-        //this.setValid(0);
+
+        if(email = ){
+            this.setValid(1);
+        }else{
+            this.setValid(0);
+        }
+
+
         return this.getValid();
     }
 }
