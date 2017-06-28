@@ -19,13 +19,5 @@ public class Login extends AppCompatActivity {
         mButton = (Button)findViewById(R.id.Aanmelden);
         mEdit   = (EditText)findViewById(R.id.Username);
 
-        mButton.setOnClickListener(
-                new View.OnClickListener()
-                {
-                    public void onClick(View view)
-                    {
-                        
-                    }
-                });
     }
 }
