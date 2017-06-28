@@ -37,13 +37,34 @@
             </intent-filter>
         </activity>
         <activity android:name=".api.DisplayListView" />
-        <activity android:name=".profiel.editprofile">
+        <activity android:name=".profiel.editprofile" />
+
+        <service
+            android:name=".api.ServiceGetData"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".webapi.ApiDriver"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".webapi.Driver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".testclasses.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".testclasses.Activity2" />
+        <activity android:name=".Login_Logout.Logout" />
+        <activity android:name=".Home" />
+        <activity android:name=".Reserveringen.Mijn_Reserveringen" />
+        <activity android:name=".Reserveringen.Nieuwe_Reserveringen" />
+        <activity android:name=".Eventpagina.View_Eventen"></activity>
     </application>
 
 </manifest>
