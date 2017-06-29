@@ -20,4 +20,11 @@ public class Login extends AppCompatActivity {
         mEdit   = (EditText)findViewById(R.id.Username);
 
     }
+
+
+
+
+    public void Inloggen(View view) {
+
+    }
 }
