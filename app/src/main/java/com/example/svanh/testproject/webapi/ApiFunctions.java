@@ -22,11 +22,35 @@ public class ApiFunctions {
         return "hello";
     }
 
-    public void ChangePassword(Context context) {
+    public static void ChangePassword(Context context, int userID, String currentpw, String newpw, String confirmpw) {
         Intent intent = new Intent(context, Driver.class);
-        intent.putExtra("url", "http://api.hostdalem.nl/validate.php?email=admin@admin.nl&password=admin1243");
+        intent.putExtra("url", "http://api.hostdalem.nl/changepassword.php?user="+userID+"&currentpw="+currentpw+"&newpw="+newpw+"&confirmpw="+confirmpw);
         context.startService(intent);
     }
+
+    public static void changeNAW(Context context, int userID){
+
+    }
+
+    public static void createReservation(){
+
+    }
+
+    public static void cancelReservation(){
+
+    }
+
+    public static void changeProfile() {
+
+    }
+    public static void addBand(){
+
+    }
+
+    public static void changeBand(){
+
+    }
+
 
 }
 

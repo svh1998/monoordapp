@@ -32,6 +32,9 @@ public class TestActivity extends CommonActivity implements CommonActivity.Handl
 
     @Override
     public void onBackPressed() {
+        String oudww = "admin123";
+        String nieuwww = "test123";
+        String confirmww = "test123";
         ApiFunctions.testdata(this);
 
 
