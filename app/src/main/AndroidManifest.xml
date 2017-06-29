@@ -51,7 +51,6 @@
             android:enabled="true"
             android:exported="true" />
 
-
         <activity android:name=".testclasses.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,7 +58,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".profiel.EditProfile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,7 +70,14 @@
         <activity android:name=".Home" />
         <activity android:name=".Reserveringen.Mijn_Reserveringen" />
         <activity android:name=".Reserveringen.Nieuwe_Reserveringen" />
-        <activity android:name=".Eventpagina.View_Eventen"></activity>
+        <activity android:name=".Eventpagina.View_Eventen" />
+        <activity android:name=".profiel.EditPassword">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

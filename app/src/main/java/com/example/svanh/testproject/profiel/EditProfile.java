@@ -44,5 +44,6 @@ public class EditProfile extends AppCompatActivity {
         final Button button = (Button)findViewById(R.id.button2);
         String url = "";
         String output;
+        toast.show();
     }
 }
