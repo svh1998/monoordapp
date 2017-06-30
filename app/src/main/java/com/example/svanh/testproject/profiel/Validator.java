@@ -31,7 +31,7 @@ public class Validator {
 
     public int isEmail(String arg1) {
 
-        if(email = ){
+        if(email == ""){
             this.setValid(1);
         }else{
             this.setValid(0);
