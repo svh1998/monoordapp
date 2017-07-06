@@ -32,14 +32,11 @@ public class TestActivity extends CommonActivity implements CommonActivity.Handl
 
     @Override
     public void onBackPressed() {
-        ApiFunctions.testdata(this);
-
-
-//        Intent i = new Intent(this, Driver.class);
-//        stopService(i);
-//        finish();
+        String oudww = "admin123";
+        String nieuwww = "test123";
+        String confirmww = "test123";
+        ApiFunctions.login(this, "admin@admin.nl", "admin123");
     }
-
 
     @Override
     public void processJson() {

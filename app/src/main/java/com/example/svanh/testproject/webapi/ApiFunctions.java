@@ -15,9 +15,9 @@ package com.example.svanh.testproject.webapi;
 
 public class ApiFunctions {
 
-    public static String testdata(Context context){
+    public static String login(Context context, String email, String wachtwoord){
         Intent intent = new Intent(context, Driver.class);
-        intent.putExtra("url", "http://api.hostdalem.nl/validate.php?email=admin@admin.nl&password=admin1243");
+        intent.putExtra("url", "http://api.hostdalem.nl/validate.php?email="+email+"&password="+wachtwoord);
         context.startService(intent);
         return "hello";
     }

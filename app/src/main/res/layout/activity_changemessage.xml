@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.svanh.testproject.testclasses.Activity2">
+    tools:context="com.example.svanh.testproject.profiel.changemessage">
 
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="147dp"
+        android:layout_height="83dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="62dp" />
 </android.support.constraint.ConstraintLayout>
