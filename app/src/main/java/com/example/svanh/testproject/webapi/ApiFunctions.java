@@ -22,9 +22,9 @@ public class ApiFunctions {
         return "hello";
     }
 
-    public void ChangePassword(Context context) {
+    public static void ChangePassword(Context context, int userid, String currentpw, String newpw, String confirmpw) {
         Intent intent = new Intent(context, Driver.class);
-        intent.putExtra("url", "http://api.hostdalem.nl/validate.php?email=admin@admin.nl&password=admin1243");
+        intent.putExtra("url", "http://api.hostdalem.nl/changepassword.php?user="+userid+"&currentpw="+currentpw+"&newpw="+newpw+"&confirmpw="+confirmpw);
         context.startService(intent);
     }
 
