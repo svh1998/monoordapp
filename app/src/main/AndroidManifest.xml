@@ -26,21 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".api.ApiTest"
-            android:label="JSON Decode/Parsing">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".api.DisplayListView" />
-
-        <service
-            android:name=".api.ServiceGetData"
-            android:enabled="true"
-            android:exported="true" />
         <service
             android:name=".webapi.ApiDriver"
             android:enabled="true"
@@ -71,12 +57,17 @@
         <activity android:name=".profiel.EditPassword">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".profiel.changemessage" />
-        <activity android:name=".profiel.BandInformation"></activity>
+        <activity android:name=".profiel.BandInformation" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
