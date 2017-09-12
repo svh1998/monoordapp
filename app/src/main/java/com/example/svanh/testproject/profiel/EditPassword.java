@@ -25,6 +25,7 @@ public class EditPassword extends CommonActivity implements CommonActivity.Handl
 
     }
 
+
     public void changePassword(View view){
 
         Context context = getApplicationContext();
@@ -36,6 +37,7 @@ public class EditPassword extends CommonActivity implements CommonActivity.Handl
         String nieuwpw2 = confirmpw.getText().toString();
         if(nieuwpw.equals(nieuwpw2)){
             Log.d("gelijk", "ja");
+
             int duration = Toast.LENGTH_SHORT;
             final Toast toast = Toast.makeText(context, "TRUE", duration);
             final Button button = (Button)findViewById(R.id.button2);
@@ -51,6 +53,7 @@ public class EditPassword extends CommonActivity implements CommonActivity.Handl
             final Button button = (Button)findViewById(R.id.button2);
             String url = "";
             String output;
+            
             toast.show();
         }
 

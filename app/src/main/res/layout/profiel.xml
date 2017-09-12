@@ -45,13 +45,12 @@
         android:ems="10"
         android:inputType="textEmailAddress" />
 
-    <EditText
-        android:id="@+id/editText4"
+    <TextView
+        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="telefoon" />
+        android:text="telefoon"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editText8"
@@ -60,21 +59,33 @@
         android:ems="10"
         android:inputType="phone" />
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="adres"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/editText9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="adres" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="naam"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editText7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/button2"
