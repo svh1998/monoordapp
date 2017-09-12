@@ -15,10 +15,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
-
-
-
 public class Driver extends IntentService {
     public static final String REQUEST_STRING = "myRequest";
     public static final String RESPONSE_STRING = "myResponse";

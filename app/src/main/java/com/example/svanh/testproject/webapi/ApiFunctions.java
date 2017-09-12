@@ -14,17 +14,18 @@ package com.example.svanh.testproject.webapi;
  */
 
 public class ApiFunctions {
+    static String weburl = "http://api.hostdalem.nl/";
 
     public static String login(Context context, String email, String wachtwoord){
         Intent intent = new Intent(context, Driver.class);
-        intent.putExtra("url", "http://api.hostdalem.nl/validate.php?email="+email+"&password="+wachtwoord);
+        intent.putExtra("url", weburl + "validate.php?email="+email+"&password="+wachtwoord);
         context.startService(intent);
         return "hello";
     }
 
     public static void ChangePassword(Context context, int userid, String currentpw, String newpw, String confirmpw) {
         Intent intent = new Intent(context, Driver.class);
-        intent.putExtra("url", "http://api.hostdalem.nl/changepassword.php?user="+userid+"&currentpw="+currentpw+"&newpw="+newpw+"&confirmpw="+confirmpw);
+        intent.putExtra("url", weburl+"changepassword.php?user="+userid+"&currentpw="+currentpw+"&newpw="+newpw+"&confirmpw="+confirmpw);
         context.startService(intent);
     }
 
