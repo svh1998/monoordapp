@@ -6,25 +6,36 @@
     android:layout_height="match_parent"
     tools:context="com.example.svanh.testproject.MainActivity">
 
-    <LinearLayout
-        android:layout_width="395dp"
-        android:layout_height="587dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="108dp"
+        android:layout_height="84dp"
+        android:text="Profiel"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.499"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.111" />
 
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="ChangePW"
-            android:text="Wachtwoord wijzigen" />
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="132dp"
+        android:layout_height="81dp"
+        android:onClick="ChangePW"
+        android:text="Wachtwoord wijzigen"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.893" />
 
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Profiel" />
-
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -16,7 +16,7 @@ import com.example.svanh.testproject.testclasses.CommonActivity;
 import com.example.svanh.testproject.webapi.ApiFunctions;
 
 public class EditPassword extends CommonActivity implements CommonActivity.HandleBroadCastResult {
-    protected static final String eindmessage = "";
+    protected static final String eindmessage = ".";
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
