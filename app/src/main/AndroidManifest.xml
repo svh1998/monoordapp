@@ -17,27 +17,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <service
             android:name=".webapi.Driver"
             android:enabled="true"
-            android:exported="true"
-        />
+            android:exported="true" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Login_Logout.Login"
-            android:label="@string/title_newactivity_login"
-        />
-
-        <activity android:name=".testclasses.TestActivity"/>
-        <activity android:name=".profiel.EditProfile"/>
+            android:label="@string/title_newactivity_login" />
+        <activity android:name=".testclasses.TestActivity" />
+        <activity android:name=".profiel.EditProfile" />
         <activity android:name=".Login_Logout.Logout" />
         <activity android:name=".Reserveringen.Mijn_Reserveringen" />
         <activity android:name=".Reserveringen.Nieuwe_Reserveringen" />
@@ -45,7 +41,7 @@
         <activity android:name=".profiel.EditPassword" />
         <activity android:name=".profiel.changemessage" />
         <activity android:name=".profiel.BandInformation" />
-
+        <activity android:name=".profiel.Contactgegevens"></activity>
     </application>
 
 </manifest>
