@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.svanh.testproject.profiel.EditPassword;
+import com.example.svanh.testproject.profiel.EditProfile;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void ChangePW(View view) {
         Intent intent = new Intent(this, EditPassword.class);
+        startActivity(intent);
+    }
+
+    public void ChangeProfile(View view) {
+        Intent intent = new Intent(this, EditProfile.class);
         startActivity(intent);
     }
 }
