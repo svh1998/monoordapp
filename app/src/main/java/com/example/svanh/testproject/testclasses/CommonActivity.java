@@ -14,6 +14,10 @@ import android.widget.Toast;
 
 import com.example.svanh.testproject.webapi.Driver;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by svanh on 6/16/2017.
  */
@@ -23,6 +27,7 @@ public class CommonActivity extends AppCompatActivity{
 
     private BroadcastReceiver broadcastReceiver;
     protected String broadcastResult;
+    protected String bc;
     private HandleBroadCastResult handleBroadCastResult;
 
     @Override
@@ -34,7 +39,7 @@ public class CommonActivity extends AppCompatActivity{
             public void onReceive(Context context, Intent intent) {
                 String responseString = intent.getStringExtra(Driver.RESPONSE_STRING);
                 broadcastResult = intent.getStringExtra(Driver.RESPONSE_MESSAGE);
-                Toast.makeText(getApplicationContext(),"intern resultaat"  + broadcastResult, Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(),"intern resultaat"  + bc, Toast.LENGTH_LONG).show();
                 handleBroadCastResult.processJson();
             }
         };

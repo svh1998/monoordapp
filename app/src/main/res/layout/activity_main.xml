@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/monoordheader"
     tools:context="com.example.svanh.testproject.MainActivity">
 
     <Button
         android:id="@+id/button11"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="108dp"
         android:layout_height="84dp"
         android:layout_marginBottom="8dp"
@@ -21,22 +23,24 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.735" />
 
     <Button
         android:id="@+id/button10"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="132dp"
         android:layout_height="81dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:onClick="ChangePW"
         android:text="Wachtwoord wijzigen"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.893" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735" />
 
 </android.support.constraint.ConstraintLayout>

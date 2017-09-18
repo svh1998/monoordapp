@@ -11,9 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.svanh.testproject.MainActivity;
 import com.example.svanh.testproject.R;
 import com.example.svanh.testproject.testclasses.CommonActivity;
 import com.example.svanh.testproject.webapi.ApiFunctions;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class EditPassword extends CommonActivity implements CommonActivity.HandleBroadCastResult {
     protected static final String eindmessage = ".";
@@ -36,41 +41,49 @@ public class EditPassword extends CommonActivity implements CommonActivity.Handl
         String nieuwpw = newpw.getText().toString();
         String nieuwpw2 = confirmpw.getText().toString();
         if(nieuwpw.equals(nieuwpw2)){
-            Log.d("gelijk", "ja");
-
-            int duration = Toast.LENGTH_SHORT;
-            final Toast toast = Toast.makeText(context, "TRUE", duration);
-            final Button button = (Button)findViewById(R.id.button2);
-            String url = "";
-            String output;
-            toast.show();
-            Log.d("nieuw ww: ", nieuwpw);
             ApiFunctions.ChangePassword(this, 1, huidigpw, nieuwpw, nieuwpw2);
         } else {
-            Log.d("gelijk", "nee");
             int duration = Toast.LENGTH_SHORT;
             final Toast toast = Toast.makeText(context, "De wachtwoorden komen niet overeen. Controleer het wachtwoord.", duration);
             final Button button = (Button)findViewById(R.id.button2);
-            String url = "";
-            String output;
-            
             toast.show();
         }
-
-
     }
 
     @Override
     public void processJson() {
-        Intent intent = new Intent(this, changemessage.class);
-        String checkmessage = "Wachtwoord gewijzigd! Nieuw wachtwoord";
-        if(broadcastResult.equals(checkmessage)){
-            intent.putExtra(eindmessage, checkmessage);
+        Intent intent = new Intent(this, MainActivity.class);
+        JSONObject jObject = null;
+        JSONArray jArray = null;
+        try {
+            jObject = new JSONObject(broadcastResult);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            jArray = jObject.getJSONArray("server_response");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        for (int i=0; i < jArray.length(); i++)
+        {
+            try {
+                JSONObject oneObject = jArray.getJSONObject(i);
+                // Pulling items from the array
+                bc = oneObject.getString("Changed");
+            } catch (JSONException e) {
+                // Oops
+            }
+        }
+        if (bc.equals("True")) {
+            Toast.makeText(getApplicationContext(),"Het wachtwoord is succesvol veranderd!", Toast.LENGTH_LONG).show();
             startActivity(intent);
         } else {
-            intent.putExtra(eindmessage, broadcastResult);
-            startActivity(intent);
+            Toast.makeText(getApplicationContext(),"Het huidige wachtwoord is onjuist. Probeer het opnieuw!", Toast.LENGTH_LONG).show();
         }
+
+
 
 
     }
