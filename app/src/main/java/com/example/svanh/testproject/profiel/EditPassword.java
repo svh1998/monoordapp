@@ -45,13 +45,14 @@ public class EditPassword extends CommonActivity implements CommonActivity.Handl
         } else {
             int duration = Toast.LENGTH_SHORT;
             final Toast toast = Toast.makeText(context, "De wachtwoorden komen niet overeen. Controleer het wachtwoord.", duration);
-            final Button button = (Button)findViewById(R.id.button2);
-            toast.show();
+            final Button button = (Button) findViewById(R.id.button2);
         }
+
     }
 
     @Override
     public void processJson() {
+        Toast.makeText(getApplicationContext(),broadcastResult, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, MainActivity.class);
         JSONObject jObject = null;
         JSONArray jArray = null;

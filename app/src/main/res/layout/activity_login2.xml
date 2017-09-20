@@ -47,8 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="voorbeeld@example.com"
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,6 +83,7 @@
 
             <Button
                 android:id="@+id/Aanmelden"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -93,6 +94,7 @@
 
             <Button
                 android:id="@+id/Registreren"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
