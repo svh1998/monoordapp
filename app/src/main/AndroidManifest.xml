@@ -41,7 +41,15 @@
         <activity android:name=".profiel.EditPassword" />
         <activity android:name=".profiel.changemessage" />
         <activity android:name=".profiel.BandInformation" />
-        <activity android:name=".profiel.Contactgegevens"></activity>
+        <activity android:name=".profiel.Contactgegevens" />
+        <activity android:name=".Login_Logout.LostPassword" />
+        <activity android:name=".Login_Logout.Registreren">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

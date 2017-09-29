@@ -36,6 +36,17 @@ public class ApiFunctions {
         context.startService(intent);
     }
 
+    public static void getBands(Context context, int userid) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl+"getbands.php?user="+userid);
+        context.startService(intent);
+    }
+
+
+    public static void getRooms(Context context) {
+        
+    }
+
     public static String getArrayData(String broadcastResult, String veld){
         JSONObject jObject = null;
         JSONArray jArray = null;

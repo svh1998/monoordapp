@@ -10,6 +10,7 @@ import android.view.*;
 
 import com.example.svanh.testproject.MainActivity;
 import com.example.svanh.testproject.R;
+import com.example.svanh.testproject.profiel.EditProfile;
 import com.example.svanh.testproject.testclasses.CommonActivity;
 import com.example.svanh.testproject.webapi.ApiFunctions;
 import com.google.android.gms.common.api.Api;
@@ -37,6 +38,11 @@ public class Login extends CommonActivity implements CommonActivity.HandleBroadC
         String emailadres = email.getText().toString();
         String wachtwoord = password.getText().toString();
         ApiFunctions.login(this, emailadres, wachtwoord);
+
+    }
+    public void LostPassword(View v){
+        Intent intent = new Intent(this, LostPassword.class);
+        startActivity(intent);
 
     }
     @Override
