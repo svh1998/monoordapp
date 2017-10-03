@@ -15,6 +15,7 @@ package com.example.svanh.testproject.webapi;
 
         import java.lang.reflect.Array;
         import java.net.MalformedURLException;
+        import java.util.ArrayList;
 
 /**
  * Created by svanh on 6/8/2017.
@@ -45,6 +46,12 @@ public class ApiFunctions {
 
     public static void getRooms(Context context) {
         
+    }
+
+    public ArrayList<String> setData(String broadcastResult) {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        Log.d("Array: ", ""+arrayList);
+        return arrayList;
     }
 
     public static String getArrayData(String broadcastResult, String veld){
