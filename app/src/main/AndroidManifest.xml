@@ -50,6 +50,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Login_Logout.EnterToken"
+            android:label="@string/title_activity_enter_token"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

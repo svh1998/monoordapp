@@ -5,7 +5,9 @@ package com.example.svanh.testproject.webapi;
         import android.content.Context;
         import android.content.Intent;
         import android.content.IntentFilter;
+        import android.os.Build;
         import android.os.SystemClock;
+        import android.support.annotation.RequiresApi;
         import android.support.v4.content.LocalBroadcastManager;
         import android.util.Log;
 
@@ -16,13 +18,14 @@ package com.example.svanh.testproject.webapi;
         import java.lang.reflect.Array;
         import java.net.MalformedURLException;
         import java.util.ArrayList;
+        import java.util.List;
 
 /**
  * Created by svanh on 6/8/2017.
  */
 
 public class ApiFunctions {
-    static String weburl = "http://api.hostdalem.nl/";
+    static String weburl = "https://sandhoofd.nl/api/";
 
     public static void login(Context context, String email, String wachtwoord){
         Intent intent = new Intent(context, Driver.class);
@@ -43,13 +46,70 @@ public class ApiFunctions {
         context.startService(intent);
     }
 
+    public static void createReservation(Context context){
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl + "addreservation.php");
+        context.startService(intent);
+    }
+
+    public static void askRecovery(Context context) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl + "recover.php");
+        context.startService(intent);
+    }
+
+    public static void checkToken(Context context, String token) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl + "checktoken.php?token="+token);
+        context.startService(intent);
+    }
+
+    public static void recoverPassword(Context context, String password, String passwordconfirm) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl + "resetpassword.php?password="+password+"&confirmpw="+passwordconfirm);
+        context.startService(intent);
+    }
+
+    public static void checkEmail(Context context, String email){
+        Intent intent = new Intent(context, Driver.class);
+        Log.d("emailadres: " , email);
+        intent.putExtra("url", weburl + "checkemail.php?email="+email);
+        context.startService(intent);
+    }
 
     public static void getRooms(Context context) {
         
     }
 
+    public static void getReservations(Context context, int band) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl+"getReservation.php?band_id=4");
+        context.startService(intent);
+    }
+
+
     public ArrayList<String> setData(String broadcastResult) {
         ArrayList<String> arrayList = new ArrayList<String>();
+        JSONObject jObject = null;
+        JSONArray jsonArray= null;
+        try {
+            jObject = new JSONObject(broadcastResult);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            jsonArray = new JSONArray(jObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+//        List<String> list = new ArrayList<String>();
+//        for(int i=0; i <jsonArray.length(); i++) {
+//            product.setId(??);
+//            product.setName(??);
+//            list.add(??);
+//        }
         Log.d("Array: ", ""+arrayList);
         return arrayList;
     }
