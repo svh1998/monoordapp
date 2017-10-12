@@ -7,6 +7,7 @@ package com.example.svanh.testproject.webapi;
         import android.content.IntentFilter;
         import android.os.Build;
         import android.os.SystemClock;
+        import android.provider.ContactsContract;
         import android.support.annotation.RequiresApi;
         import android.support.v4.content.LocalBroadcastManager;
         import android.util.Log;
@@ -34,6 +35,14 @@ public class ApiFunctions {
 
     }
 
+    public static void Register(Context context,
+        String email, String password, String firstname, String lastname, String streetname, int housenumber,
+        String housenrext, int zipcode, String ZC, String City, int netnumber, int phonenumber) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl+"register.php?email="+email+"&password="+password+"&firstname="+firstname+"&lastname="+lastname+
+        "&streetname="+streetname+"&housenumber="+housenumber+"&nrext="+housenrext+"&zipcode="+zipcode+ZC+"&city="+City+
+                "&phone="+netnumber+"-"+phonenumber);
+    }
     public static void ChangePassword(Context context, int userid, String currentpw, String newpw, String confirmpw) {
         Intent intent = new Intent(context, Driver.class);
         intent.putExtra("url", weburl+"changepassword.php?user="+userid+"&currentpw="+currentpw+"&newpw="+newpw+"&confirmpw="+confirmpw);
@@ -74,6 +83,11 @@ public class ApiFunctions {
         Intent intent = new Intent(context, Driver.class);
         Log.d("emailadres: " , email);
         intent.putExtra("url", weburl + "checkemail.php?email="+email);
+        context.startService(intent);
+    }
+    public static void AddReservation(Context context, int bandid, String paymentmethod ) {
+        Intent intent = new Intent(context, Driver.class);
+        intent.putExtra("url", weburl + "addreservation.php?bandid="+bandid + "&paymentmethod="+paymentmethod);
         context.startService(intent);
     }
 
