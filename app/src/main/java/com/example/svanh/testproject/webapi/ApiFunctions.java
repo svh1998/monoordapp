@@ -25,7 +25,7 @@ package com.example.svanh.testproject.webapi;
  */
 
 public class ApiFunctions {
-    static String weburl = "https://sandhoofd.nl/api/";
+    static String weburl = "http://api.hostdalem.nl/";
 
     public static void login(Context context, String email, String wachtwoord){
         Intent intent = new Intent(context, Driver.class);

@@ -35,7 +35,14 @@
         <activity android:name=".testclasses.TestActivity" />
         <activity android:name=".profiel.EditProfile" />
         <activity android:name=".Login_Logout.Logout" />
-        <activity android:name=".Reserveringen.Mijn_Reserveringen" />
+        <activity android:name=".Reserveringen.Mijn_Reserveringen">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity android:name=".Reserveringen.Nieuwe_Reserveringen" />
         <activity android:name=".Eventpagina.View_Eventen" />
         <activity android:name=".profiel.EditPassword" />
