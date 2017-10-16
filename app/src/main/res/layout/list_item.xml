@@ -12,18 +12,19 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Datum"
+            android:id="@+id/Date_Time_Start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Datum: 10/07/2017" />
+            android:text="Begin Datum en Tijd: 10/07/2017 12:00" />
 
         <TextView
-            android:id="@+id/Ruimte"
+            android:id="@+id/Date_Time_End"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ruimte: 110 Groot" />
+            android:text="Begin Datum en Tijd: 10/07/2017 12:00" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -32,11 +33,11 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Tijd"
+            android:id="@+id/Ruimte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tijd Van: 10:00 tot: 13:00" />
+            android:text="Ruimte: 110 Groot" />
 
         <TextView
             android:id="@+id/Band"

@@ -15,11 +15,16 @@ import com.example.svanh.testproject.MainActivity;
 import com.example.svanh.testproject.R;
 import com.example.svanh.testproject.testclasses.CommonActivity;
 import com.example.svanh.testproject.webapi.ApiFunctions;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.lang.reflect.Type;
@@ -28,38 +33,16 @@ import java.util.List;
 
 import static java.sql.Types.NULL;
 
-public class Mijn_Reserveringen extends CommonActivity implements CommonActivity.HandleBroadCastResult{
+public class Mijn_Reserveringen extends AppCompatActivity {
 
-    @Override
-    public void processJson() {
-        Intent main = new Intent(this, MainActivity.class);
-        String Start_Datum = "";
-        String Eind_Datum = "";
-        String Room_ID = "";
 
-        JSON = broadcastResult;
-        Log.d("json", JSON);
-        try {
-
-            Start_Datum = ApiFunctions.getArrayData(broadcastResult, "reservation_time_start");
-            Eind_Datum = ApiFunctions.getArrayData(broadcastResult, "reservation_time_end");
-            Room_ID = ApiFunctions.getArrayData(broadcastResult, "room_id");
-            Log.d("start", Start_Datum);
-        } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Server niet bereikbaar.", Toast.LENGTH_LONG).show();
-        }
-    }
 
 
     private ListView mListView;
 
     private List<HashMap<String, String>> mAndroidMapList = new ArrayList<>();
     private String JSON = "";
-
-    private static final String KEY_DATUM = "Datum";
-    private static final String KEY_Ruimte = "Ruimte";
-    private static final String KEY_TIJD = "Tijd";
-    private static final String Key_Band = "Band";
+    private String Result = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,27 +50,41 @@ public class Mijn_Reserveringen extends CommonActivity implements CommonActivity
         setContentView(R.layout.activity_mijn__reserveringen);
         ApiFunctions.getReservations(this, 4);
 
+
         mListView = (ListView) findViewById(R.id.list_view);
 
-        JSON = broadcastResult;
+        try {
 
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<ContactModel>>(){}.getType();
-        List<ContactModel> contactList = gson.fromJson(jsonString, type);
-        for (ContactModel contact : contactList){
-            Log.i("Contact Details", contact.id + "-" + contact.name + "-" + contact.email);
+            String stringResponse = "";
+            Gson gson = new Gson();
+            Log.d("Status", "Start FromJson");
+            //gson.fromJson(stringResponse, Result);
+            Log.d("Status", "End FromJson");
+        } catch (JsonSyntaxException e) {
+            e.printStackTrace();
+
         }
+
+        new LoadJSONTask((LoadJSONTask.Listener) this);
+
     }
 
-    public void onLoaded(List<AndroidVersion> androidList) {
+    private static final String KEY_START = "Start Tijd";
+    private static final String KEY_END = "Eind Tijd";
+    private static final String KEY_Zaal = "Tijd";
+    private static final String Key_Band = "Band";
+    private static final String Key_Res_NR = "ResNR";
 
-        for (AndroidVersion android : androidList) {
+    public void onLoaded(List<Reservation> androidList) {
+
+        for (Reservation Reservation : androidList) {
             HashMap<String, String> map = new HashMap<>();
 
-            map.put(KEY_DATUM, android.get_Datum());
-            map.put(KEY_Ruimte, android.get_Ruimte());
-            map.put(KEY_TIJD, android.get_Tijd());
-            map.put(Key_Band, android.get_Band());
+            map.put(KEY_START, Reservation.getBegintijd());
+            map.put(KEY_END, Reservation.getEindtijd());
+            map.put(KEY_Zaal, Reservation.getZaal());
+            map.put(Key_Band, Reservation.getBand());
+            map.put(Key_Res_NR, Reservation.getReserveringsnummer());
 
             mAndroidMapList.add(map);
         }
@@ -100,15 +97,20 @@ public class Mijn_Reserveringen extends CommonActivity implements CommonActivity
         Toast.makeText(this, "Error !", Toast.LENGTH_SHORT).show();
     }
 
+
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this, mAndroidMapList.get(i).get(KEY_DATUM),Toast.LENGTH_LONG).show();
+        Toast.makeText(this, mAndroidMapList.get(i).get(Key_Res_NR),Toast.LENGTH_LONG).show();
     }
 
     private void loadListView() {
+
         ListAdapter adapter = new SimpleAdapter(Mijn_Reserveringen.this, mAndroidMapList, R.layout.list_item,
-                new String[] { KEY_DATUM, KEY_Ruimte, Key_Band, KEY_TIJD },
-                new int[] { R.id.Datum,R.id.Ruimte, R.id.Band, R.id.Tijd });
+                new String[] { KEY_START, KEY_END, KEY_Zaal, Key_Band, Key_Res_NR },
+                new int[] { R.id.Date_Time_Start,R.id.Ruimte, R.id.Band, R.id.Date_Time_End });
+
         mListView.setAdapter(adapter);
 
     }
+
 }
+
