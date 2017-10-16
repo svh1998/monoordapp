@@ -5,15 +5,14 @@ package com.example.svanh.testproject.Reserveringen;
  */
 
 public class Reservation {
-    private String begintijd, eindtijd, datum, zaal;
-    private int reserveringsnummer;
+    private String begintijd, eindtijd, band, zaal, reserveringsnummer;
 
-    public Reservation(String begintijd, String eindtijd, String datum, String zaal, int reserveringsnummer) {
+    public Reservation(String begintijd, String eindtijd, String band, String zaal, String reserveringsnummer) {
         this.begintijd = begintijd;
         this.eindtijd = eindtijd;
-        this.datum = datum;
         this.zaal = zaal;
         this.reserveringsnummer = reserveringsnummer;
+        this.band = band;
     }
 
     public String getBegintijd() {
@@ -32,14 +31,6 @@ public class Reservation {
         this.eindtijd = eindtijd;
     }
 
-    public String getDatum() {
-        return datum;
-    }
-
-    public void setDatum(String datum) {
-        this.datum = datum;
-    }
-
     public String getZaal() {
         return zaal;
     }
@@ -48,11 +39,19 @@ public class Reservation {
         this.zaal = zaal;
     }
 
-    public int getReserveringsnummer() {
+    public String getBand() {
+        return zaal;
+    }
+
+    public void setBand(String band) {
+        this.band = band;
+    }
+
+    public String getReserveringsnummer() {
         return reserveringsnummer;
     }
 
-    public void setReserveringsnummer(int reserveringsnummer) {
+    public void setReserveringsnummer(String reserveringsnummer) {
         this.reserveringsnummer = reserveringsnummer;
     }
 }
