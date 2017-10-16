@@ -45,6 +45,11 @@ public class Login extends CommonActivity implements CommonActivity.HandleBroadC
         startActivity(intent);
 
     }
+
+    public void Register(View v) {
+        Intent intent = new Intent(this, Registreren.class);
+        startActivity(intent);
+    }
     @Override
     public void processJson() {
         Intent main = new Intent(this, MainActivity.class);
