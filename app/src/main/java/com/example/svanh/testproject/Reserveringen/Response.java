@@ -1,13 +1,16 @@
 package com.example.svanh.testproject.Reserveringen;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Response {
 
-    private List<Reservation> android = new ArrayList<Reservation>();
+    private List<AndroidVersion> server_response = new ArrayList<AndroidVersion>();
 
-    public List<Reservation> getAndroid() {
-        return android;
+    public List<AndroidVersion> getAndroid() {
+        Log.d("stage", "getAndroid");
+        return server_response;
     }
 }

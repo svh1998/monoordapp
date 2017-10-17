@@ -1,77 +1,51 @@
 package com.example.svanh.testproject.Reserveringen;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.svanh.testproject.MainActivity;
-import com.example.svanh.testproject.testclasses.CommonActivity;
-import com.example.svanh.testproject.webapi.ApiFunctions;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 
-public class LoadJSONTask extends CommonActivity implements CommonActivity.HandleBroadCastResult{
-    String JSON = "";
+public class LoadJSONTask extends AsyncTask<String, Void, Response> {
 
-    @Override
-    public void processJson() {
-        Intent main = new Intent(this, MainActivity.class);
-        String Start_Datum = "";
-        String Eind_Datum = "";
-        String Room_ID = "";
-        String test = "";
-
-        JSON = broadcastResult;
-        Log.d("json", JSON);
-        try {
-
-            Start_Datum = ApiFunctions.getArrayData(broadcastResult, "reservation_time_start");
-            Eind_Datum = ApiFunctions.getArrayData(broadcastResult, "reservation_time_end");
-            Room_ID = ApiFunctions.getArrayData(broadcastResult, "room_id");
-            Log.d("start", Start_Datum);
-        } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Server niet bereikbaar.", Toast.LENGTH_LONG).show();
-        }
-    }
 
     public LoadJSONTask(Listener listener) {
         mListener = listener;
+        Log.d("stage", "LoadJSONTask");
     }
 
     public interface Listener {
-
-        void onLoaded(List<Reservation> androidList);
+        void onLoaded(List<AndroidVersion> androidList);
 
         void onError();
     }
 
     private Listener mListener;
 
-
+    @Override
     protected Response doInBackground(String... strings) {
+        Log.d("stage", "Do in Background");
         try {
 
-            String stringResponse = JSON;
+            String stringResponse = loadJSON(strings[0]);
+            Log.d("stage", stringResponse);
             Gson gson = new Gson();
-
             return gson.fromJson(stringResponse, Response.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
             return null;
         }
     }
 
+    @Override
     protected void onPostExecute(Response response) {
-
+        Log.d("stage", "OnpostExecute");
         if (response != null) {
 
             mListener.onLoaded(response.getAndroid());
@@ -82,5 +56,8 @@ public class LoadJSONTask extends CommonActivity implements CommonActivity.Handl
         }
     }
 
-
+    private String loadJSON(String jsonURL) throws IOException {
+        Log.d("stage", "LoadJSON From Website");
+        return "{'server_response':[{'id':'2','room_id':'5','reservation_time_start':'2017-07-07 13:00:00','reservation_time_end':'2017-07-07 13:30:00'},{'id':'3','room_id':'7','reservation_time_start':'2017-09-09 14:00:00','reservation_time_end':'2017-09-09 14:50:00'}]}";
+    }
 }

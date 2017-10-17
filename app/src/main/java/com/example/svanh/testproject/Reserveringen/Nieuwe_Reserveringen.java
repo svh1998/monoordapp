@@ -17,5 +17,7 @@ public class Nieuwe_Reserveringen extends AppCompatActivity {
         String[] items = new String[]{"1", "2", "three"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
+
+
     }
 }

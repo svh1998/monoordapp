@@ -12,18 +12,18 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Date_Time_Start"
+            android:id="@+id/reservation_time_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Begin Datum en Tijd: 10/07/2017 12:00" />
+            android:text="Datum: 10/07/2017" />
 
         <TextView
-            android:id="@+id/Date_Time_End"
+            android:id="@+id/reservation_time_end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Begin Datum en Tijd: 10/07/2017 12:00" />
+            android:text="Tijd Van: 10:00 tot: 13:00" />
 
     </LinearLayout>
 
@@ -32,19 +32,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/Ruimte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ruimte: 110 Groot" />
-
-        <TextView
-            android:id="@+id/Band"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="BandNaam: De InCesT" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/room_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Ruimte: 110 Groot" />
 
 </LinearLayout>
