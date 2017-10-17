@@ -36,12 +36,15 @@ public class ApiFunctions {
     }
 
     public static void Register(Context context,
-        String email, String password, String firstname, String lastname, String streetname, int housenumber,
-        String housenrext, int zipcode, String ZC, String City, int netnumber, int phonenumber) {
+                                String email, String password, String firstname, String lastname, String streetname, int housenumber,
+                                String housenrext, String zipcode, String City, int netnumber, int phonenumber) {
+        Log.d("Register FUnction", "Incoming");
         Intent intent = new Intent(context, Driver.class);
         intent.putExtra("url", weburl+"register.php?email="+email+"&password="+password+"&firstname="+firstname+"&lastname="+lastname+
-        "&streetname="+streetname+"&housenumber="+housenumber+"&nrext="+housenrext+"&zipcode="+zipcode+ZC+"&city="+City+
+                "&streetname="+streetname+"&housenumber="+housenumber+"&nrext="+housenrext+"&zipcode="+zipcode+"&city="+City+
                 "&phone="+netnumber+"-"+phonenumber);
+        context.startService(intent);
+
     }
     public static void ChangePassword(Context context, int userid, String currentpw, String newpw, String confirmpw) {
         Intent intent = new Intent(context, Driver.class);

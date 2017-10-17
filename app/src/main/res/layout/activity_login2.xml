@@ -101,6 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="Register"
                 android:text="Registreren"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="447dp" />
