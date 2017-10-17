@@ -3,6 +3,7 @@ package com.example.svanh.testproject.Login_Logout;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -39,28 +40,19 @@ public class Registreren extends CommonActivity implements CommonActivity.Handle
         bevestigwachtwoord = (EditText) findViewById(R.id.fld_passwdconf);
         knop = (Button) findViewById(R.id.submit);
         knop.setOnClickListener(new View.OnClickListener(){
-
             public void onClick(View view){
-
                 register();
             }
-
-
-
-
         });
-
-
-
     }
     public void register(){
         initialize();
         if(!validate()){
             Toast.makeText(this, "registratie mislukt",Toast.LENGTH_SHORT).show();
-            finalregister();
         }
         else{
             onSignupSuccess();
+            finalregister();
         }
 
     }
@@ -119,6 +111,7 @@ public class Registreren extends CommonActivity implements CommonActivity.Handle
     }
 
     public void finalregister() {
+        Log.d("TAG", "opened finalregister");
         String email = v_email;
         String password = v_wachtwoord;
         String firstname = v_voornaam;
@@ -137,6 +130,7 @@ public class Registreren extends CommonActivity implements CommonActivity.Handle
     @Override
     public void processJson() {
         String valid = "";
+        Log.d("PROCESS JSON", "ARRIVED");
 
         try {
             valid = ApiFunctions.getArrayData(broadcastResult, "valid");
