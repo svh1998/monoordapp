@@ -58,6 +58,7 @@ public class LoadJSONTask extends AsyncTask<String, Void, Response> {
 
     private String loadJSON(String jsonURL) throws IOException {
         Log.d("stage", "LoadJSON From Website");
+        Log.d("test", "Test");
         return "{'server_response':[{'id':'2','room_id':'5','reservation_time_start':'2017-07-07 13:00:00','reservation_time_end':'2017-07-07 13:30:00'},{'id':'3','room_id':'7','reservation_time_start':'2017-09-09 14:00:00','reservation_time_end':'2017-09-09 14:50:00'}]}";
     }
 }

@@ -19,7 +19,7 @@ package com.example.svanh.testproject.Reserveringen;
 public class Mijn_Reserveringen extends AppCompatActivity implements LoadJSONTask.Listener, AdapterView.OnItemClickListener {
 
     private ListView mListView;
-
+    public String JSON = "Test";
 
     private List<HashMap<String, String>> mAndroidMapList = new ArrayList<>();
 
@@ -36,7 +36,7 @@ public class Mijn_Reserveringen extends AppCompatActivity implements LoadJSONTas
         mListView = (ListView) findViewById(R.id.list_view);
         mListView.setOnItemClickListener(this);
         Log.d("stage", "oncreate");
-        new LoadJSONTask(this).execute();
+        new LoadJSONTask(this).execute(JSON);
     }
 
     @Override
